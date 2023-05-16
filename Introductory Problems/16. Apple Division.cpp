@@ -20,36 +20,41 @@ typedef pair<char, ll> pcl;
 #define REPITR(it,o) for (auto it = o.rbegin(); it != o.rend(); it++)
 
 int main() {
-    ll n;
-    cin >> n;
-    vl p;
-    REP(i,0,n){
-        ll tmp;
-        cin >> tmp;
-        p.PB(tmp);
-    }
+    ll n = 10;
+    // cin >> n;
+    vl p {238, 224, 861, 461, 558, 860, 318, 93, 347, 402};
+    // REP(i,0,n){
+    //     ll tmp;
+    //     cin >> tmp;
+    //     p.PB(tmp);
+    // }
     ll diff = 0;
-    sort(p.begin(), p.end());
+    sort(p.rbegin(), p.rend());
     REP(i,0,n){
-        ll val = 0;
-        ll min_d = 1000000000;
+        ll index_to_remove = -1;
+        ll tmp_diff = 1000000000;
         REP(j,0,n-i){
-            if (diff > 0){
-                if (abs(diff-p[j]) < min_d) {
-                    min_d = abs(diff-p[j]);
-                    val = p[j];
+            if (diff < 0){
+                if( abs(diff+p[j]) < tmp_diff){
+                    tmp_diff = diff+p[j];
+                    index_to_remove = j;
                 }
             } else {
-                if (abs(diff+p[j]) < min_d) {
-                    min_d = abs(diff+p[j]);
-                    val = p[j];
+                if( abs(diff-p[j]) < tmp_diff){
+                    tmp_diff = diff-p[j];
+                    index_to_remove = j;
                 }
             }
         }
-        diff = min_d;
-        p.erase(p.begin() + binary_search(p.begin(), p.end(), val));
+        diff = tmp_diff;
+        vl::iterator it;
+        it = p.begin();
+        REP(x,0,index_to_remove){
+            it++;
+        }
+        p.erase(it);
     }
     cout << abs(diff);
 }
 
-// TODO - its wrong rn
+// TODO - its wrong rn todo Todo
