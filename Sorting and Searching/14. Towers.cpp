@@ -23,37 +23,20 @@ typedef pair<ll, ll> pll;
 #define REPIT(it,o) for (auto it = o.begin(); it != o.end(); it++)
 #define REPITR(it,o) for (auto it = o.rbegin(); it != o.rend(); it++)
 
-ll search(vl v, ll t){
-    REP(i,0,v.size()){
-        if (v[i] == t){
-            return i;
-        } 
-    } return -1;
-}
 int main() {
-    fastio();`
+    fastio();
     ll n;
     cin >> n;
     vl v;
-    ll ans = 0;
+    multiset<ll> tops;
     REP(i,0,n){
         ll tmp;
         cin >> tmp;
-        ll r = search(v, tmp);
-        if (r == -1){
-            v.PB(tmp);
-            ans = max(ans,(ll) v.size());
-        } else {
-            vl::iterator it = v.begin();
-            REP(j,0,r){
-                it++;
-            }
-            it++;
-            v.erase(v.begin(), it);
-            v.PB(tmp);
-        }
+        multiset<ll>::iterator it = tops.upper_bound(tmp);
+        if(it != tops.end()){
+            tops.erase(it);
+        } 
+        tops.insert(tmp);
     }
-    cout << ans;
+    cout << tops.size();
 }
-
-//  TODO -tle
