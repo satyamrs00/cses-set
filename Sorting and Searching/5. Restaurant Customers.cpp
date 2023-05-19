@@ -53,3 +53,7 @@ int main() {
     }
     cout << maxc;
 }
+
+// - first approach 
+// arrivals array, leavings array. leap over simultaneously if someone arrives +1, if someone leaves -1, maintain max value
+// ac

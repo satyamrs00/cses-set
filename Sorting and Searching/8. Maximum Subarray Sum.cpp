@@ -43,3 +43,7 @@ int main() {
     }
     cout << ans;
 }
+
+// - initial approach
+// iterate over the vector and upto each element max subarray sum = itself or prev max subarray + itself
+// ac

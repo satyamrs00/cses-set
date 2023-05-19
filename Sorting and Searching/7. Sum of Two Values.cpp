@@ -43,3 +43,16 @@ int main() {
     cout << "IMPOSSIBLE";
     return 0;
 }
+
+// - initial approach
+// copied the vector to v2 and sorted it. now for every value of v, binary search for x-v[i] in v2. if found, linear search for x-v[i] in v and print the positions
+// tle
+// - second approach 
+// two nested loops to find the sum
+// tle
+// - third approach
+// maintained a map of ll-sl to store the values and set of its indexes. sorted the array, iterate on array, binary search for x-v[i] (ignoring at ith pos). if found, get the corres set for x-v[i] and print the index which is diff from i
+// tle (very dumb approach)
+// - fourth approach
+// maintain a map of ll-ll for value to its latest index. just after cin, look for x-ele in map if found print its index and current loop iteration
+// ac

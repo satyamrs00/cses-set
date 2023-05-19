@@ -58,3 +58,13 @@ int main() {
     }
     cout << ans;
 }
+
+// - first approach 
+// sort both lists. nested loop to find the soln
+// tle
+// - second approach
+// sort both. loop over apartments and search for tenants using a binary search algo(logn). if found remove that tenant from the list
+// tle
+// - third approach
+// sort both. loop over simultaneously, check for eligibility and skip over whichevers value is less
+// ac

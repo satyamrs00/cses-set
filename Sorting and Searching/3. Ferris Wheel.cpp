@@ -45,3 +45,7 @@ int main() {
     }
     cout << ans;
 }
+
+// - initial approach 
+// two pointer method 
+// ac

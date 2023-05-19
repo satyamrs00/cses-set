@@ -17,6 +17,7 @@ typedef pair<ll, ll> pll;
 #define PB push_back
 #define F first 
 #define S second
+#define I iterator
 #define REP(i,a,b) for (ll i = a; i < b; i++)
 #define REPR(i,a,b) for (ll i = a; i > b; i--)
 #define REPJ(i,a,b,j) for (ll i = a; i < b; i+=j)
@@ -25,22 +26,22 @@ typedef pair<ll, ll> pll;
 
 int main() {
     fastio();
-    ll n;
-    cin >> n;
-    vl v;
-    multiset<ll> tops;
+    ll n,k;
+    cin >> n >> k;
+    sl v;
     REP(i,0,n){
-        ll tmp;
-        cin >> tmp;
-        multiset<ll>::iterator it = tops.upper_bound(tmp);
-        if(it != tops.end()){
-            tops.erase(it);
-        } 
-        tops.insert(tmp);
+        v.insert(i+1);
     }
-    cout << tops.size();
+    for(sl::I it = v.begin(); v.size() > 0; it=it){
+        if (it == v.end()){
+            it = v.begin();
+        }
+        it++;
+        if (it == v.end()){
+            it = v.begin();
+        }
+        cout << *it << " ";
+        it = v.erase(it);
+    }
 }
-
-// - initial approach 
-// maintain a multiset of size of top cubes of each tower, used upper_bound to find the just bigger top cube
-// ac
+// TODO - incomplete

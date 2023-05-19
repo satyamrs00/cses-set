@@ -55,3 +55,7 @@ int main() {
         }
     }
 }
+
+// - first approach
+// stored count of tickets in a map, stored the prices in set, for every customer find upperbound value-1 (if exists) then cout -> reduce count from map , if it gets to 0 remove from set
+// ac

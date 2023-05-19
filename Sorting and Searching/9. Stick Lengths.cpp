@@ -42,3 +42,9 @@ int main() {
     cout << ans;
 }
 
+// - initial approach 
+// iterate over the list and print the sum of absolute diff with the mean
+// wa
+// - modification
+// used median to the same approach
+// ac

@@ -32,3 +32,7 @@ int main() {
     }
     cout << s.size();
 }
+
+// - first approach 
+// store in set. return size
+// ac

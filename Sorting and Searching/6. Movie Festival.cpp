@@ -45,3 +45,7 @@ int main() {
     }
     cout << ans;
 }
+
+// - initial approach 
+// sort by ending time of movies and count how many you can watch in that order
+// ac
