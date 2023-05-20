@@ -10,6 +10,7 @@ typedef vector<string> vs;
 typedef set<ll> sl;
 typedef map<string, ll> msl;
 typedef map<ll, ll> mll;
+typedef unordered_map<ll, ll> umll;
 typedef pair<string, ll> psl;
 typedef pair<ll, ll> pll;
 

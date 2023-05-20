@@ -26,27 +26,22 @@ typedef pair<ll, ll> pll;
 int main() {
     ll n;
     cin >> n;
-    vl a;
-    vl x;
+    sl a;
+    ll ans = 1;
     REP(i,0,n){
         ll tmp;
         cin >> tmp;
-        a.PB(tmp);
-        x.PB(i+1);
-    }
-    ll ans = 1;
-    vl::I xi = x.begin();
-    vl::I ai = a.begin();
-    while(xi != x.end()){
-        if (ai == a.end()){
-            ans++; ai = a.begin();
+        if (a.count(tmp+1)){
+            ans++;
         }
-        if (*ai == *xi){
-            xi++;
-        } 
-        ai++;
+        a.insert(tmp);
     }
     cout << ans;
 }
 
-//  TODO - incomplete
+// - initial approach
+// maintain a var last i.e. last counted no. loop over repeatedly over the array until last == 1
+// tle
+// - second approach
+// loop over the array, for x, if x+1 is before the ele, increase the rounds
+// ac

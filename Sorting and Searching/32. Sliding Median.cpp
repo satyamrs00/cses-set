@@ -10,7 +10,6 @@ typedef vector<string> vs;
 typedef set<ll> sl;
 typedef map<string, ll> msl;
 typedef map<ll, ll> mll;
-typedef unordered_map<ll, ll> umll;
 typedef pair<string, ll> psl;
 typedef pair<ll, ll> pll;
 
@@ -29,44 +28,22 @@ typedef pair<ll, ll> pll;
 
 int main() {
     fastio();
-    ll n,x;
-    cin >> n >> x;
-    map<ll,set<pll>> m;
+    ll n,k;
+    cin >> n >> k;
     vl v;
     REP(i,0,n){
         ll t;
         cin >> t;
         v.PB(t);
-    }
-    REP(i,0,n){
-        REP(j,0,n){
-            ll s = v[i]+v[j];
-            if (i!=j && s < x){
-                if(m.count(s)){
-                    m[s].insert(make_pair(i,j));
-                } else {
-                    set<pll> se{make_pair(i,j)};
-                    m[s] = se;
-                }
-            }
+        if (i < k){
+            v2.PB(t);
         }
     }
-    REP(i,0,n){
-        if (m.count(x-v[i])){
-            for (auto item: m[x-v[i]]){
-                if (i != item.F && i != item.S){
-                    cout <<i+1<<" "<<item.F+1<<' '<<item.S+1;
-                    return 0;
-                }
-            }
-            
-        }
+    sort(ALL(v2));
+    cout << v2[(k-1)/2] << ' ';
+    for (ll i = k-1; i<n; i++){
+
     }
-    cout << "IMPOSSIBLE\n";
 }
-
-// TODO - incomplete
-
+//  TODO incomplete
 // - initial approach
-// one nested loop to save the sum of every pair of element in a map then one loop to find the req pair
-// tle
