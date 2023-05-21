@@ -16,7 +16,6 @@ typedef pair<ll, ll> pll;
 
 #define fastio() ios_base::sync_with_stdio(0);cin.tie(NULL)
 #define PB push_back
-#define MP make_pair
 #define F first 
 #define S second
 #define I iterator
@@ -30,21 +29,24 @@ typedef pair<ll, ll> pll;
 
 int main() {
     fastio();
-    ll x,n; cin >> x >> n;
-    pll last = MP(0,x);
+    ll n,x; cin >> n >> x;
+    vl v;
+    ll curr_sum = 0;
+    ll ans = 0;
+    deque<ll> d;
     REP(i,0,n){
         ll t; cin >> t;
-        if (t > last.F && t < last.S){
-            if (t-last.F > last.S-t){
-                last = MP(last.F,t);
-            } else {
-                last= MP(t,last.S);
-            }
+        d.PB(t);
+        curr_sum += t;
+        while(curr_sum>=x){
+            if (curr_sum == x) ans++;
+            curr_sum -= d.front();
+            d.pop_front();
         }
-        cout << last.S-last.F << " ";
     }
+    cout << ans;
 }
 
 // - initial approach
-// maintain a var for the largest gap, check if the new light falls in this gap, update if does
-// wa
+// maintain a queue and sum for current subarray, at each input , if sum gets greater than req pop from front if it gets equal at some point, ans++
+// ac

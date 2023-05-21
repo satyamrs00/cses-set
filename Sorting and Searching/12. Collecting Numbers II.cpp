@@ -74,3 +74,7 @@ int main() {
 }
 
 //  TODO - incomplete
+
+// - first approach 
+// loop over the array, for x, if x+1 is before the ele, increase the rounds. then loop over the changes check if it switched the occurence of a,a-1;a,a+1;b,b-1;b,b+1 adjust accordingly
+// couldnt implement 

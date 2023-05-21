@@ -32,9 +32,17 @@ int main() {
         a.PB(tmp);
     }
     sort(a.begin(), a.end());
-    ll ans = 0;
-
+    ll ans = 1;
+    REP(i,0,n){
+        if (a[i] > ans) break;
+        ans += a[i];
+    }
     cout << ans;
 }
 
-//  TODO - incomplete
+// - initial approach
+// too dumb to discuss
+// tle & wa
+// - second approach
+// sort,maintain a sum_to_check loop-> if ele > sum break else sum += ele
+// ac
