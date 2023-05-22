@@ -16,9 +16,6 @@ typedef pair<ll, ll> pll;
 
 #define fastio() ios_base::sync_with_stdio(0);cin.tie(NULL)
 #define PB push_back
-#define MP make_pair
-#define LB lower_bound
-#define UB upper_bound
 #define F first 
 #define S second
 #define I iterator
@@ -32,6 +29,11 @@ typedef pair<ll, ll> pll;
 
 int main() {
     fastio();
+    ll n,t; cin >> n >> t;
+    REP(i,0,n){
+        ll tmp; cin >> tmp;
+        
+    }
 }
 
 // - initial approach

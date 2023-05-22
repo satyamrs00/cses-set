@@ -4,57 +4,54 @@
 using namespace std;
 
 typedef long long ll;
+typedef unsigned long long ull;
 typedef vector<ll> vl;
 typedef vector<string> vs;
 typedef set<ll> sl;
-typedef map<char, ll> mcl;
-typedef pair<char, ll> pcl;
+typedef map<string, ll> msl;
+typedef map<ll, ll> mll;
+typedef unordered_map<ll, ll> umll;
+typedef pair<string, ll> psl;
+typedef pair<ll, ll> pll;
 
+#define fastio() ios_base::sync_with_stdio(0);cin.tie(NULL)
 #define PB push_back
 #define F first 
 #define S second
+#define I iterator
 #define REP(i,a,b) for (ll i = a; i < b; i++)
 #define REPR(i,a,b) for (ll i = a; i > b; i--)
 #define REPJ(i,a,b,j) for (ll i = a; i < b; i+=j)
 #define REPIT(it,o) for (auto it = o.begin(); it != o.end(); it++)
 #define REPITR(it,o) for (auto it = o.rbegin(); it != o.rend(); it++)
+#define ALL(a) a.begin(),a.end()
+#define ALLR(a) a.rbegin(),a.rend()
 
 int main() {
-    ll n = 10;
-    // cin >> n;
-    vl p {238, 224, 861, 461, 558, 860, 318, 93, 347, 402};
-    // REP(i,0,n){
-    //     ll tmp;
-    //     cin >> tmp;
-    //     p.PB(tmp);
-    // }
-    ll diff = 0;
-    sort(p.rbegin(), p.rend());
+    ll n;
+    cin >> n;
+    vl s;
+    s.PB(0);
+    ll sum = 0;
     REP(i,0,n){
-        ll index_to_remove = -1;
-        ll tmp_diff = 1000000000;
-        REP(j,0,n-i){
-            if (diff < 0){
-                if( abs(diff+p[j]) < tmp_diff){
-                    tmp_diff = diff+p[j];
-                    index_to_remove = j;
-                }
-            } else {
-                if( abs(diff-p[j]) < tmp_diff){
-                    tmp_diff = diff-p[j];
-                    index_to_remove = j;
-                }
-            }
+        ll tmp;
+        cin >> tmp;
+        ll l = s.size();
+        REP(j,0,l){
+            s.PB(s[j]+tmp);
         }
-        diff = tmp_diff;
-        vl::iterator it;
-        it = p.begin();
-        REP(x,0,index_to_remove){
-            it++;
-        }
-        p.erase(it);
+        sum += tmp;
     }
-    cout << abs(diff);
+
+    ll cur = 0;
+    REPIT(it,s){
+        if (*it == sum/2) {
+            cur = *it;
+            break;
+        }
+        if (abs(sum/2-cur) > abs(sum/2-*it)) cur = *it;
+    }
+    cout << abs(sum-cur-cur);
 }
 
 // TODO - its wrong rn 
