@@ -1,8 +1,22 @@
 ### C++ Solutions to 
 # CSES problem set 
 
-you can find the problems [here](https://cses.fi/problemset/list/)
+<!-- you can find the problems [here](https://cses.fi/problemset/list/) -->
 
+## Table of Contents
+- [CSES problem set](#cses-problem-set)
+  - [Table of Contents](#table-of-contents)
+    - [Introductory Problems](#introductory-problems)
+    - [Sorting and Searching](#sorting-and-searching)
+    - [Dynamic Programming](#dynamic-programming)
+    - [Graph Algorithms](#graph-algorithms)
+    - [Range Queries](#range-queries)
+    - [Tree Algorithms](#tree-algorithms)
+    - [Mathematics](#mathematics)
+    - [String Algorithms](#string-algorithms)
+    - [Geometry](#geometry)
+    - [Advanced Techniques](#advanced-techniques)
+    - [Additional Problems](#additional-problems)
 ### [Introductory Problems](https://github.com/satyamrs00/cses-problem-set-solutions/tree/main/Introductory%20Problems)
 - [x] [Weird Algorithm](https://github.com/satyamrs00/cses-problem-set-solutions/blob/main/Introductory%20Problems/1.%20Weird%20Algorithm.cpp)
 - [x] [Missing Number](https://github.com/satyamrs00/cses-problem-set-solutions/blob/main/Introductory%20Problems/2.%20Missing%20Number.cpp)
@@ -49,14 +63,24 @@ you can find the problems [here](https://cses.fi/problemset/list/)
 - [x] [Tasks and Deadlines](https://github.com/satyamrs00/cses-problem-set-solutions/blob/main/Sorting%20and%20Searching/22.%20Tasks%20and%20Deadlines.cpp)
 - [x] [Reading Books](https://github.com/satyamrs00/cses-problem-set-solutions/blob/main/Sorting%20and%20Searching/23.%20Reading%20Books.cpp)
 - [x] [Sum of Three Values](https://github.com/satyamrs00/cses-problem-set-solutions/blob/main/Sorting%20and%20Searching/24.%20Sum%20of%20Three%20Values.cpp)
-- [x] [Sum of Four Values]()
+- [x] [Sum of Four Values](https://github.com/satyamrs00/cses-problem-set-solutions/blob/main/Sorting%20and%20Searching/25.%20Sum%20of%20Four%20Values.cpp)
 - [x] [Nearest Smaller Values](https://github.com/satyamrs00/cses-problem-set-solutions/blob/main/Sorting%20and%20Searching/26.%20Nearest%20Smaller%20Values.cpp)
 - [x] [Subarray Sums I](https://github.com/satyamrs00/cses-problem-set-solutions/blob/main/Sorting%20and%20Searching/27.%20Subarray%20Sums%20I.cpp)
 - [ ] [Subarray Sums II](https://github.com/satyamrs00/cses-problem-set-solutions/blob/main/Sorting%20and%20Searching/28.%20Subarray%20Sums%20II.cpp)
-- [ ] [Subarray Divisibility]()
-- [ ] [Subarray Distinct Values]()
-- [ ] [Array Division]()
+- [ ] Subarray Divisibility
+- [ ] Subarray Distinct Values
+- [ ] Array Division
 - [ ] [Sliding Median](https://github.com/satyamrs00/cses-problem-set-solutions/blob/main/Sorting%20and%20Searching/32.%20Sliding%20Median.cpp)
-- [ ] [Sliding Cost]()
-- [x] [Movie Festival II]()
-- [ ] [Maximum Subarray Sum II]()
+- [ ] Sliding Cost
+- [x] [Movie Festival II](https://github.com/satyamrs00/cses-problem-set-solutions/blob/main/Sorting%20and%20Searching/34.%20Movie%20Festival%20II.cpp)
+- [ ] Maximum Subarray Sum II
+
+### Dynamic Programming
+### Graph Algorithms
+### Range Queries
+### Tree Algorithms
+### Mathematics
+### String Algorithms
+### Geometry
+### Advanced Techniques
+### Additional Problems
