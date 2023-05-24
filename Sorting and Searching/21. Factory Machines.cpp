@@ -30,10 +30,12 @@ typedef pair<ll, ll> pll;
 int main() {
     fastio();
     ll n,t; cin >> n >> t;
+    vl v;
     REP(i,0,n){
         ll tmp; cin >> tmp;
-        
+        v.PB(tmp);
     }
+    while()
 }
 
 // - initial approach

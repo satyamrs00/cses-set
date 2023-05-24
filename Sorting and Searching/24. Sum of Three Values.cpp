@@ -31,42 +31,49 @@ int main() {
     fastio();
     ll n,x;
     cin >> n >> x;
-    map<ll,set<pll>> m;
     vl v;
     REP(i,0,n){
         ll t;
         cin >> t;
         v.PB(t);
     }
+    vl vc (v);
+    sort(ALL(v));
     REP(i,0,n){
-        REP(j,0,n){
-            ll s = v[i]+v[j];
-            if (i!=j && s < x){
-                if(m.count(s)){
-                    m[s].insert(make_pair(i,j));
-                } else {
-                    set<pll> se{make_pair(i,j)};
-                    m[s] = se;
+        ll i1 = 0;
+        ll i2 = n-1;
+        while(i1 < i2 && i1 < n && i2 >= 0){
+            if (v[i1]+v[i2] == x-v[i]){
+                if (i2 == i){ 
+                    i2--; continue; 
                 }
+                if (i1 == i){ 
+                    i1++; continue; 
+                }
+                auto it1 = find(ALL(vc),v[i]);
+                cout << distance(vc.begin(),it1)+1 << " ";
+                auto it2 = find(vc.begin(),it1,v[i1]); 
+                if (it2 == it1){ it2 = find(++it1,vc.end(),v[i1]); }
+                cout << distance(vc.begin(),it2)+1 << " ";
+                auto it3 = find(vc.begin(),--it1,v[i2]); 
+                if (it3 == it1){ it3 = find(++it1,it2,v[i2]); } 
+                if (it3 == it2){ it3 = find(++it2,vc.end(),v[i2]); } 
+                cout << distance(vc.begin(),it3)+1 << " ";
+                return 0;
+            } else if (v[i1]+v[i2] > x-v[i]){
+                i2--;
+            } else if (v[i1]+v[i2] < x-v[i]){
+                i1++;
             }
         }
-    }
-    REP(i,0,n){
-        if (m.count(x-v[i])){
-            for (auto item: m[x-v[i]]){
-                if (i != item.F && i != item.S){
-                    cout <<i+1<<" "<<item.F+1<<' '<<item.S+1;
-                    return 0;
-                }
-            }
-            
-        }
+
     }
     cout << "IMPOSSIBLE\n";
 }
 
-// TODO - incomplete
-
 // - initial approach
 // one nested loop to save the sum of every pair of element in a map then one loop to find the req pair
 // tle
+// - second approach
+// sort , keep a copy, loop over all - use two pointer to find the other two values, find the position of those values in the copy
+// ac
