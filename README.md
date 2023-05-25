@@ -66,16 +66,37 @@
 - [x] [Sum of Four Values](https://github.com/satyamrs00/cses-problem-set-solutions/blob/main/Sorting%20and%20Searching/25.%20Sum%20of%20Four%20Values.cpp)
 - [x] [Nearest Smaller Values](https://github.com/satyamrs00/cses-problem-set-solutions/blob/main/Sorting%20and%20Searching/26.%20Nearest%20Smaller%20Values.cpp)
 - [x] [Subarray Sums I](https://github.com/satyamrs00/cses-problem-set-solutions/blob/main/Sorting%20and%20Searching/27.%20Subarray%20Sums%20I.cpp)
-- [ ] [Subarray Sums II](https://github.com/satyamrs00/cses-problem-set-solutions/blob/main/Sorting%20and%20Searching/28.%20Subarray%20Sums%20II.cpp)
-- [ ] Subarray Divisibility
-- [ ] Subarray Distinct Values
+- [x] [Subarray Sums II](https://github.com/satyamrs00/cses-problem-set-solutions/blob/main/Sorting%20and%20Searching/28.%20Subarray%20Sums%20II.cpp)
+- [x] [Subarray Divisibility](https://github.com/satyamrs00/cses-problem-set-solutions/blob/main/Sorting%20and%20Searching/29.%20Subarray%20Divisibility.cpp)
+- [ ] [Subarray Distinct Values](https://github.com/satyamrs00/cses-problem-set-solutions/blob/main/Sorting%20and%20Searching/30.%20Subarray%20Distinct%20Values.cpp)
 - [ ] Array Division
-- [ ] [Sliding Median](https://github.com/satyamrs00/cses-problem-set-solutions/blob/main/Sorting%20and%20Searching/32.%20Sliding%20Median.cpp)
-- [ ] Sliding Cost
+- [x] [Sliding Median](https://github.com/satyamrs00/cses-problem-set-solutions/blob/main/Sorting%20and%20Searching/32.%20Sliding%20Median.cpp)
+- [ ] [Sliding Cost](https://github.com/satyamrs00/cses-problem-set-solutions/blob/main/Sorting%20and%20Searching/33.%20Sliding%20Cost.cpp)
 - [x] [Movie Festival II](https://github.com/satyamrs00/cses-problem-set-solutions/blob/main/Sorting%20and%20Searching/34.%20Movie%20Festival%20II.cpp)
 - [ ] Maximum Subarray Sum II
 
-### Dynamic Programming
+### [Dynamic Programming](https://github.com/satyamrs00/cses-problem-set-solutions/tree/main/Dynamic%20Programming)
+- [x] [Dice Combinations](https://github.com/satyamrs00/cses-problem-set-solutions/blob/main/Dynamic%20Programming/1.%20Dice%20Combinations.cpp)
+- [ ] [Minimizing Coins](https://github.com/satyamrs00/cses-problem-set-solutions/blob/main/Dynamic%20Programming/2.%20Minimizing%20Coins.cpp)
+- [ ] Coin Combinations I
+- [ ] Coin Combinations II
+- [ ] Removing Digits
+- [ ] Grid Paths
+- [ ] Book Shop
+- [ ] Array Description
+- [ ] Counting Towers
+- [ ] Edit Distance
+- [ ] Rectangle Cutting
+- [ ] Money Sums
+- [ ] Removal Game
+- [ ] Two Sets II
+- [ ] Increasing Subsequence
+- [ ] Projects
+- [ ] Elevator Rides
+- [ ] Counting Tilings
+- [ ] Counting Numbers
+
+
 ### Graph Algorithms
 ### Range Queries
 ### Tree Algorithms
