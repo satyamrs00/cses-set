@@ -17,6 +17,8 @@ typedef pair<ll, ll> pll;
 #define fastio() ios_base::sync_with_stdio(0);cin.tie(NULL)
 #define PB push_back
 #define MP make_pair
+#define LB lower_bound
+#define UB upper_bound
 #define F first 
 #define S second
 #define I iterator
@@ -30,22 +32,21 @@ typedef pair<ll, ll> pll;
 
 int main() {
     fastio();
-    ll x,n; cin >> x >> n;
-    pll last = MP(0,x);
+    ll n; cin >> n;
+    vl a(n);
+    REP(i,0,n){ cin >> a[i]; }
+    vl mods(n,0);
+    // mods[0] = 1;
+    ll cur = 0; ll ans = 0;
     REP(i,0,n){
-        ll t; cin >> t;
-        if (t > last.F && t < last.S){
-            if (t-last.F > last.S-t){
-                last = MP(last.F,t);
-            } else {
-                last= MP(t,last.S);
-            }
-        }
-        cout << last.S-last.F << " ";
+        cur = (cur%n+a[i]%n+n)%n;
+        if (cur == 0){ ans++; }
+        ans += mods[cur];
+        mods[cur]++;
     }
+    cout << ans;
 }
 
-// TODO
 // - initial approach
-// maintain a var for the largest gap, check if the new light falls in this gap, update if does
-// wa
+// maitain the count of modulo sum of every subarray that starts at 0;loop over and add the count of modulo upto that ele to ans, because we can remove that subarray from the start to get the desired subarray
+// ac

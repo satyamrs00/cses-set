@@ -80,5 +80,3 @@ int main() {
 }
 
 // - initial approach
-// use a multiset to store the window, maintian a persistent iterator that always point to the median, adjust this iterator when insert or erase happens
-// ac

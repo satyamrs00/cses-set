@@ -53,5 +53,3 @@ int main() {
     }
     cout << abs(sum-cur-cur);
 }
-
-// TODO - its wrong rn 
