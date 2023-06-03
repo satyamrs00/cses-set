@@ -5,9 +5,7 @@ using namespace std;
 
 typedef long long ll;
 typedef unsigned long long ull;
-typedef long double ld;
 typedef vector<ll> vl;
-typedef vector<ld> vd;
 typedef vector<string> vs;
 typedef set<ll> sl;
 typedef map<string, ll> msl;
@@ -34,6 +32,24 @@ typedef pair<ll, ll> pll;
 
 int main() {
     fastio();
+    ll n; cin >> n;
+    vl ans;
+    REP(i,0,n+1){
+        if (i < 10) { ans.PB(1); continue; }
+        ll ic = i;
+        ll t = LLONG_MAX;
+        while(ic > 0){
+            ll ld = ic%10;
+            if (ld > 0){
+                t = min(t,ans[i-ld]);
+            }
+            ic /= 10;
+        }
+        ans.PB(t+1);
+    }
+    cout << ans[n];
 }
 
 // - initial approach
+// dp - for each no, ans is equal to min of answers of (no - digit for each digit) +1
+// ac

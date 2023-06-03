@@ -32,8 +32,27 @@ typedef pair<ll, ll> pll;
 #define ALL(a) a.begin(),a.end()
 #define ALLR(a) a.rbegin(),a.rend()
 
-int main() {
-    fastio();
+bool c(pll a, pll b){
+    if ((ld)a.F/(ld)a.S == (ld)b.F/(ld)b.S) return a.F < b.F;
+    return (ld)a.F/(ld)a.S > (ld)b.F/(ld)b.S;
 }
 
+int main() {
+    fastio();
+    ll n,x; cin >> n >> x;
+    vl pr (n,0); REP(i,0,n){ cin >> pr[i]; }
+    vector<pll> pa_p_pr; REP(i,0,n){ ll t;cin >> t; pa_p_pr.PB(MP(t, pr[i])); }
+    sort(ALL(pa_p_pr), c);
+    ll ans = 0;
+    REP(i,0,n){
+        if (pa_p_pr[i].S <= x){
+            ans += pa_p_pr[i].F;
+            x -= pa_p_pr[i].S;
+        }
+    }
+    cout << ans;
+}
+// TODO - wrong
 // - initial approach
+// greedy - sort a array of pair of price and pages by pages/price desc , loop over and count from the first ele
+// wa

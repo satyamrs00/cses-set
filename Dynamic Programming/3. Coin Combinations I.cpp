@@ -5,9 +5,7 @@ using namespace std;
 
 typedef long long ll;
 typedef unsigned long long ull;
-typedef long double ld;
 typedef vector<ll> vl;
-typedef vector<ld> vd;
 typedef vector<string> vs;
 typedef set<ll> sl;
 typedef map<string, ll> msl;
@@ -34,6 +32,20 @@ typedef pair<ll, ll> pll;
 
 int main() {
     fastio();
+    ll n,x; cin >> n >> x;
+    vl c (n,0); REP(i,0,n){ cin >> c[i]; }
+    sort(ALL(c));
+    vl ans (x+1,0);
+    ans[0] = 1;
+    REP(i,1,x+1){
+        REP(j,0,n){
+            if (i-c[j] < 0 || ans[i-c[j]] < 0) break;
+            ans[i] = (ans[i] + ans[i-c[j]])%1000000007;
+        }
+    }
+    cout << ans[x];
 }
 
 // - initial approach
+// dp - for each x, ans = sum of answers for x-coin for each coin 
+// ac

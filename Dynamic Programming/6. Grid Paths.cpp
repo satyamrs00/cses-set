@@ -5,9 +5,7 @@ using namespace std;
 
 typedef long long ll;
 typedef unsigned long long ull;
-typedef long double ld;
 typedef vector<ll> vl;
-typedef vector<ld> vd;
 typedef vector<string> vs;
 typedef set<ll> sl;
 typedef map<string, ll> msl;
@@ -34,6 +32,20 @@ typedef pair<ll, ll> pll;
 
 int main() {
     fastio();
+    ll n; cin >> n;
+    vector<vl> g (n, vl(n,0));
+    REP(i,0,n){
+        string s; cin >> s;
+        REP(j,0,n){
+            if (s[j] == '*') {continue;}
+            if (i == 0 && j == 0){ g[i][j] = 1; continue; }
+            if (i-1 >= 0){ g[i][j] = (g[i][j] + g[i-1][j]) % 1000000007; }
+            if (j-1 >= 0){ g[i][j] = (g[i][j] + g[i][j-1]) % 1000000007; }
+        }
+    }
+    cout << g[n-1][n-1];
 }
 
 // - initial approach
+// dp - steps upto a pos = steps upto a pos above + steps upto a pos left
+// ac

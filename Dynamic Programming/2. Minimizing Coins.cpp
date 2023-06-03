@@ -32,11 +32,24 @@ typedef pair<ll, ll> pll;
 
 int main() {
     fastio();
-    ll n, x; cin >> n >> x;
+    ll n,x; cin >> n >> x;
     vl c(n,0); REP(i,0,n){ cin >> c[i]; }
-    vl ans (x,0);
-    REP(i,0,)
+    vl ans (x+1,0);
+
+    REP(i,1,x+1){
+        ll t = LLONG_MAX;
+        REP(j,0,n){
+            if (i-c[j] < 0 || ans[i-c[j]] < 0){ continue; }
+            t = min(t,ans[i-c[j]]);
+        }
+        if (t == LLONG_MAX)
+            ans[i] = -1;
+        else
+            ans[i] = t+1;
+    }
+    cout << ans[x];
 }
 
-// TODO
 // - initial approach
+// dp - for each x, ans = min of answers for x - coin for each coin +1
+// ac

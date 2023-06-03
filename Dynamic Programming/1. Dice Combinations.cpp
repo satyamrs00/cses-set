@@ -49,3 +49,5 @@ int main() {
 }
 
 // - initial approach
+// dp - for each n, ans = sum of no of ways for n - {1 through 6} 
+// ac
