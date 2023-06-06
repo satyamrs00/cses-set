@@ -77,20 +77,20 @@
 
 ### [Dynamic Programming](https://github.com/satyamrs00/cses-problem-set-solutions/tree/main/Dynamic%20Programming)
 - [x] [Dice Combinations](https://github.com/satyamrs00/cses-problem-set-solutions/blob/main/Dynamic%20Programming/1.%20Dice%20Combinations.cpp)
-- [ ] [Minimizing Coins](https://github.com/satyamrs00/cses-problem-set-solutions/blob/main/Dynamic%20Programming/2.%20Minimizing%20Coins.cpp)
-- [ ] Coin Combinations I
-- [ ] Coin Combinations II
-- [ ] Removing Digits
-- [ ] Grid Paths
-- [ ] Book Shop
+- [x] [Minimizing Coins](https://github.com/satyamrs00/cses-problem-set-solutions/blob/main/Dynamic%20Programming/2.%20Minimizing%20Coins.cpp)
+- [x] [Coin Combinations I](https://github.com/satyamrs00/cses-problem-set-solutions/blob/main/Dynamic%20Programming/3.%20Coin%20Combinations%20I.cpp)
+- [ ] [Coin Combinations II](https://github.com/satyamrs00/cses-problem-set-solutions/blob/main/Dynamic%20Programming/4.%20Coin%20Combinations%20II.cpp)
+- [x] [Removing Digits](https://github.com/satyamrs00/cses-problem-set-solutions/blob/main/Dynamic%20Programming/5.%20Removing%20Digits.cpp)
+- [x] [Grid Paths](https://github.com/satyamrs00/cses-problem-set-solutions/blob/main/Dynamic%20Programming/6.%20Grid%20Paths.cpp)
+- [x] [Book Shop](https://github.com/satyamrs00/cses-problem-set-solutions/blob/main/Dynamic%20Programming/7.%20Book%20Shop.cpp)
 - [ ] Array Description
 - [ ] Counting Towers
 - [ ] Edit Distance
 - [ ] Rectangle Cutting
-- [ ] Money Sums
+- [x] [Money Sums](https://github.com/satyamrs00/cses-problem-set-solutions/blob/main/Dynamic%20Programming/12.%20Money%20Sums.cpp)
 - [ ] Removal Game
-- [ ] Two Sets II
-- [ ] Increasing Subsequence
+- [ ] [Two Sets II](https://github.com/satyamrs00/cses-problem-set-solutions/blob/main/Dynamic%20Programming/14.%20Two%20Sets%20II.cpp)
+- [ ] [Increasing Subsequence](https://github.com/satyamrs00/cses-problem-set-solutions/blob/main/Dynamic%20Programming/15.%20Increasing%20Subsequence.cpp)
 - [ ] Projects
 - [ ] Elevator Rides
 - [ ] Counting Tilings
