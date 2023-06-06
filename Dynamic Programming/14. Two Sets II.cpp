@@ -10,6 +10,7 @@ typedef vector<ll> vl;
 typedef vector<ld> vd;
 typedef vector<string> vs;
 typedef set<ll> sl;
+typedef multiset<ll> ml;
 typedef map<string, ll> msl;
 typedef map<ll, ll> mll;
 typedef unordered_map<ll, ll> umll;
@@ -24,6 +25,7 @@ typedef pair<ll, ll> pll;
 #define F first 
 #define S second
 #define I iterator
+#define mod 1000000007
 #define REP(i,a,b) for (ll i = a; i < b; i++)
 #define REPR(i,a,b) for (ll i = a; i > b; i--)
 #define REPJ(i,a,b,j) for (ll i = a; i < b; i+=j)
@@ -32,31 +34,27 @@ typedef pair<ll, ll> pll;
 #define ALL(a) a.begin(),a.end()
 #define ALLR(a) a.rbegin(),a.rend()
 
-bool c(pll a, pll b){
-    if ((ld)a.F/(ld)a.S == (ld)b.F/(ld)b.S) return a.F < b.F;
-    return (ld)a.F/(ld)a.S > (ld)b.F/(ld)b.S;
-}
-
 int main() {
     fastio();
-    ll n,x; cin >> n >> x;
-    vl pr (n,0); REP(i,0,n){ cin >> pr[i]; }
-    vl pa (n,0); REP(i,0,n){ cin >> pa[i]; }
-    vl ans (x+1,0);
-    REP(i,0,n){
-        REPR(j,x,pr[i]-1){
-            ans[j] = max(ans[j], (pa[i] + ans[j-pr[i]]));
-        }
+    ll n; cin >> n;
+    ll sum = 0;
+    vl v; 
+    REP(i,1,n+1){
+        sum += i;
+        v.PB(i);
     }
-    cout << ans[x];
+    ll f = sum/2;
+    ml s;
+    REP(i,1,n+1){
+        vl tmp (s.begin(), s.end());
+        REPIT(it,tmp){
+            s.insert(*it+i);
+        }
+        s.insert(i);
+    }
+    cout << s.count(f)/2;
 }
 
 // - initial approach
-// greedy - sort a array of pair of price and pages by pages/price desc , loop over and count from the first ele
-// wa
-// second approach
-// dp - loop from 1 to x and update the max value by looping through each book as max(ans[j], (pa[i] + ans[j-pr[i]]));
-// wa
-// third approach
-// dp - for every book set the max value from x to pr[i] considering we can either include the book or not
-// ac
+// find sum/2. find the sum of every subset of n -> store in a multiset. count for sum/2
+// tle

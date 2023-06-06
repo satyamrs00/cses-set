@@ -33,17 +33,27 @@ typedef pair<ll, ll> pll;
 int main() {
     fastio();
     ll n,x; cin >> n >> x;
-    vl c (n,0); REP(i,0,n){ cin >> c[i]; }
+    vl c (n,0); ll max_c = 0; REP(i,0,n){ cin >> c[i]; max_c = max(max_c, c[i]); }
     sort(ALL(c));
-    vl ans (x+1,0);
-    ans[0] = 1;
+    vector<umll> ans (x+1);
+    REP(i,0,n){
+        ans[0][c[i]] = 1;
+    }
     REP(i,1,x+1){
         REP(j,0,n){
-            if (i-c[j] < 0 || ans[i-c[j]] < 0) break;
-            ans[i] = (ans[i] + ans[i-c[j]])%1000000007;
+            if (j > 0) ans[i][c[j]] = ans[i][c[j-1]];
+            if (i >= c[j]){
+                
+                ans[i][c[j]] += ans[i-c[j]][c[j]];
+            }
         }
     }
-    cout << ans[x];
+    // cout << ans[x][max_c];
+    REPIT(it,ans){
+        REP(i,0,n){
+            cout << (*it)[c[i]] << ' ';
+        } cout << "\n";
+    }
 }
 // TODO - incomplete
 // - initial approach

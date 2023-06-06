@@ -32,31 +32,24 @@ typedef pair<ll, ll> pll;
 #define ALL(a) a.begin(),a.end()
 #define ALLR(a) a.rbegin(),a.rend()
 
-bool c(pll a, pll b){
-    if ((ld)a.F/(ld)a.S == (ld)b.F/(ld)b.S) return a.F < b.F;
-    return (ld)a.F/(ld)a.S > (ld)b.F/(ld)b.S;
-}
-
 int main() {
     fastio();
-    ll n,x; cin >> n >> x;
-    vl pr (n,0); REP(i,0,n){ cin >> pr[i]; }
-    vl pa (n,0); REP(i,0,n){ cin >> pa[i]; }
-    vl ans (x+1,0);
+    ll n; cin >> n;
+    vl c(n, 0); REP(i,0,n){ cin >> c[i]; }
+    sl s;
     REP(i,0,n){
-        REPR(j,x,pr[i]-1){
-            ans[j] = max(ans[j], (pa[i] + ans[j-pr[i]]));
+        vl tmp (s.begin(), s.end());
+        REPIT(it,tmp){
+            s.insert(*it+c[i]);
         }
+        s.insert(c[i]);
     }
-    cout << ans[x];
+    cout << s.size() << "\n";
+    REPIT(it,s){
+        cout << *it << ' ';
+    }
 }
 
 // - initial approach
-// greedy - sort a array of pair of price and pages by pages/price desc , loop over and count from the first ele
-// wa
-// second approach
-// dp - loop from 1 to x and update the max value by looping through each book as max(ans[j], (pa[i] + ans[j-pr[i]]));
-// wa
-// third approach
-// dp - for every book set the max value from x to pr[i] considering we can either include the book or not
+// find the sum of every subset and store in a set
 // ac

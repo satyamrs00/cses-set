@@ -32,31 +32,25 @@ typedef pair<ll, ll> pll;
 #define ALL(a) a.begin(),a.end()
 #define ALLR(a) a.rbegin(),a.rend()
 
-bool c(pll a, pll b){
-    if ((ld)a.F/(ld)a.S == (ld)b.F/(ld)b.S) return a.F < b.F;
-    return (ld)a.F/(ld)a.S > (ld)b.F/(ld)b.S;
+bool com(pll a, pll b){
+    if (a.F == b.F) return a.S > b.S;
+    return a.F < b.F
 }
-
 int main() {
     fastio();
-    ll n,x; cin >> n >> x;
-    vl pr (n,0); REP(i,0,n){ cin >> pr[i]; }
-    vl pa (n,0); REP(i,0,n){ cin >> pa[i]; }
-    vl ans (x+1,0);
+    ll n; cin >> n;
+    vl x(n); REP(i,0,n){ cin >> x[i]; }
+    set<pll> s;
     REP(i,0,n){
-        REPR(j,x,pr[i]-1){
-            ans[j] = max(ans[j], (pa[i] + ans[j-pr[i]]));
+        pll tmp = MP(x[i],1);
+        REPITR(it,s){
+            
         }
+        s.insert(tmp);
     }
-    cout << ans[x];
+    cout << (s.rbegin())->F;
 }
 
 // - initial approach
-// greedy - sort a array of pair of price and pages by pages/price desc , loop over and count from the first ele
-// wa
-// second approach
-// dp - loop from 1 to x and update the max value by looping through each book as max(ans[j], (pa[i] + ans[j-pr[i]]));
-// wa
-// third approach
-// dp - for every book set the max value from x to pr[i] considering we can either include the book or not
-// ac
+// dp - store length and end value of longest subseq ending at each pos in a set of pair
+// tle
