@@ -36,6 +36,38 @@ typedef pair<ll, ll> pll;
 
 int main() {
     fastio();
+    ll n, m; cin >> n >> m;
+    vector<vector<vector<ll>>> es (n, vector<vector<ll>> (0));
+    for (ll i = 0; i < m; i++){
+        ll a, b, c;
+        cin >> a >> b >> c;
+        es[a-1].push_back({b-1, c});
+    }
+    vector<ll> ans (n, LLONG_MAX);
+    ans[0] = 0;
+
+    priority_queue<pair<ll, ll>> q;
+    vector<bool> vis(n, false);
+
+    q.push({0, 0});
+
+    while(!q.empty()){
+        ll d, n; tie(d, n) = q.top(); q.pop();
+        if (!vis[n]) {
+            vis[n] = true;
+            for (auto x : es[n]){
+                if (ans[n] + x[1] < ans[x[0]] && ans[n] + x[1] >= 0){
+                    ans[x[0]] = ans[n] + x[1];
+                    q.push({ans[x[0]] * -1, x[0]});
+                }
+            }
+        }
+    }
+
+    for (auto x : ans){
+        cout << x << ' ';
+    }
+    return 0;
 }
 
 // - initial approach

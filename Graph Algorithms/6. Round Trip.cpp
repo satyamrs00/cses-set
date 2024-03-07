@@ -34,8 +34,24 @@ typedef pair<ll, ll> pll;
 #define ALL(a) a.begin(),a.end()
 #define ALLR(a) a.rbegin(),a.rend()
 
+vector<vector<int>> g;
+
+void dfs(int n, unordered_map<int, int> p){
+    if (p.size > )
+}
+
 int main() {
     fastio();
+    ll n, m; cin >> n >> m;
+    g.resize(n, vector<int> (0));
+    REP(i, 0, n){
+        int a, b;
+        cin >> a >> b;
+        g[a-1].push_back(b-1);
+        g[b-1].push_back(a-1);
+    }
+
+    dfs(int n, {n});
 }
 
 // - initial approach

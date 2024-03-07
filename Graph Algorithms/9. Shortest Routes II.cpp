@@ -36,6 +36,40 @@ typedef pair<ll, ll> pll;
 
 int main() {
     fastio();
+    ll n, m, q;
+    cin >> n >> m >> q;
+    vector<vector<ll>> d(n, vector<ll> (n, INT_MAX));
+
+    REP(i, 0, m){
+        ll a, b, c;
+        cin >> a >> b >> c;
+        d[a-1][b-1] = min(c, d[a-1][b-1]);
+        d[b-1][a-1] = min(c, d[b-1][a-1]);
+    }
+    REP(i, 0, n){
+        d[i][i] = 0;
+    }
+    REP(k, 0, n){
+        REP(i, 0, n){
+            REP(j, 0, n){
+                if (d[i][k] == INT_MAX || d[k][j] == INT_MAX){
+
+                } else if (d[i][j] == INT_MAX) {
+                    d[i][j] = d[i][k] + d[k][j];
+                } else {
+                    d[i][j] = min(d[i][j], d[i][k]+d[k][j]);
+                }
+            }
+        }
+    }
+
+    REP(i, 0, q){
+        ll a, b;
+        cin >> a >> b;
+        cout << (d[a-1][b-1] == INT_MAX ? -1 : d[a-1][b-1])<< '\n';
+    }
+    return 0;
+
 }
 
 // - initial approach

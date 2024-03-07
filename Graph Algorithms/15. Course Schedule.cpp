@@ -34,8 +34,55 @@ typedef pair<ll, ll> pll;
 #define ALL(a) a.begin(),a.end()
 #define ALLR(a) a.rbegin(),a.rend()
 
+vector<vector<int>> gr;
+vector<int> ans;
+vector<int> vis;
+
+bool dfs (int n) {
+    vis[n] = 1;
+
+    for (auto x : gr[n]){
+        if (vis[x] == 1){
+            cout << "IMPOSSIBLE";
+            return false;
+        } else if (vis[x] == 0) {
+            bool pp2 = dfs(x);
+            if (!pp2) return false;
+        }
+    }
+
+    ans.push_back(n);
+    vis[n] = 2;
+    return true;
+}
+
 int main() {
     fastio();
+    int n, m;
+    cin >> n >> m;
+    gr.resize(n, vector<int> (0));
+
+    REP(i, 0, m){
+        int a, b;
+        cin >> a >> b;
+        gr[a-1].push_back(b-1);
+    }
+
+    vis.resize(n, 0);
+
+    for (int i = 0; i < n; i++){
+        if (vis[i] == 0){
+            bool pp = dfs(i);
+            if (!pp){
+                return 0;
+            }
+        }
+    }
+
+    reverse(ALL(ans));
+    for (auto x : ans){
+        cout << x+1 << ' ';
+    }
 }
 
 // - initial approach

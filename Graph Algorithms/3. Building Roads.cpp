@@ -36,6 +36,39 @@ typedef pair<ll, ll> pll;
 
 int main() {
     fastio();
+    int n, m;
+    cin >> n >> m;
+    vector<vector<int>> g(n, vector<int> (0));
+    REP(i, 0, m){
+        int a, b; cin >> a >> b;
+        g[a-1].push_back(b-1);
+        g[b-1].push_back(a-1);
+    }
+    vector<bool> v(n, false);
+    vector<int> heads;
+
+    for (int i = 0; i < n; i++){
+        if (!v[i]){
+            heads.push_back(i+1);
+            stack<int> s;
+            s.push(i);
+            while(!s.empty()){
+                int x = s.top(); s.pop();
+
+                for (auto k : g[x]){
+                    if (!v[k]){
+                        v[k] = true;
+                        s.push(k);
+                    }
+                }
+            }
+        }
+    }
+    cout << heads.size()-1 << '\n';
+    REP(i, 0, heads.size()-1){
+        cout << heads[i] << ' ' << heads[i+1] << '\n';
+    }
+    return 0;
 }
 
 // - initial approach
